@@ -1,0 +1,7 @@
+.author {
+    Display : inline-block;
+    width: 60px;
+}
+.cursor-pointer {
+    cursor: pointer;
+  }
