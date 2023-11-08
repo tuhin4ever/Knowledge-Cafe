@@ -25,10 +25,10 @@ const Home = ({ handleReadTime, readTime }) => {
     }
     const newBookMark = [...bookMark, cafe];
     setBookMark(newBookMark);
-
     const previous = JSON.parse(localStorage.getItem("bookMark")) || [];
     previous.push(cafe);
     localStorage.setItem("bookMark", JSON.stringify(previous));
+    toast.success("Cafe bookmarked successfully!");
   };
   return (
     <>
@@ -49,7 +49,10 @@ const Home = ({ handleReadTime, readTime }) => {
           <div className="side-container col-md-4 card mt-5">
             <SideMark bookMark={bookMark} readTime={readTime}></SideMark>
             {bookMark.map((book) => (
-              <div key={book.id} className="card w-100 shadow-none p-3 mt-4 bg-light rounded">
+              <div
+                key={book.id}
+                className="card w-100 shadow-none p-3 mt-4 bg-light rounded"
+              >
                 <h4>{book.description}</h4>
               </div>
             ))}
